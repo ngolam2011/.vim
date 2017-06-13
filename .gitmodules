@@ -1,3 +1,6 @@
 [submodule "bundle/dbext.vim"]
 	path = bundle/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
+[submodule "bundle/tubular"]
+	path = bundle/tubular
+	url = https://github.com/godlygeek/tabular.git
