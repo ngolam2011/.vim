@@ -4,3 +4,9 @@
 [submodule "bundle/tubular"]
 	path = bundle/tubular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/tpope-vim-abolish"]
+	path = bundle/tpope-vim-abolish
+	url = https://github.com/tpope/tpope-vim-abolish.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
