@@ -1,7 +1,14 @@
-execute pathogen#infect()
+call plug#begin($USERPROFILE.'/vimplugin')
 
-let mapleader=","       " leader is comma
-let g:mapleader = ","
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+"Plug in
+Plug 'mattn/emmet-vim'
+
+"let mapleader=","       " leader is comma
+"let g:mapleader = ","
 
 " filetype support
 set nocompatible
@@ -64,8 +71,12 @@ set tabstop=4       " number of visual spaces per TAB
 set expandtab       " tabs are spaces
 
 set showcmd             " show command in bottom bar
-"set cursorline          " highlight current line
+
+set cursorline          " highlight current line
+hi CursorLine ctermbg=8 ctermfg=15 "8 = dark gray, 15 = white
+
 set wildmenu            " visual autocomplete for command menu
+set wildmode=full
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 
