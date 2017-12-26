@@ -73,7 +73,7 @@ set expandtab       " tabs are spaces
 set showcmd             " show command in bottom bar
 
 set cursorline          " highlight current line
-hi CursorLine ctermbg=8 ctermfg=15 "8 = dark gray, 15 = white
+hi CursorLine term=reverse ctermbg=8 guibg=DarkGrey
 
 set wildmenu            " visual autocomplete for command menu
 set wildmode=full
