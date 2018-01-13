@@ -1,11 +1,12 @@
-call plug#begin($USERPROFILE.'/vimplugin')
-
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
+call plug#begin($USERPROFILE.'/vimplugin')
 "Plug in
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+call plug#end()
 
 "let mapleader=","       " leader is comma
 "let g:mapleader = ","
@@ -24,16 +25,12 @@ set path+=**
 "Gundo
 "nnoremap <F5> :GundoToggle<CR>
 
-" database profile
-"let g:dbext_default_SQLSRV_bin="/opt/mssql-tools/bin/sqlcmd"
-"let g:dbext_default_profile_mySQLServer='type=SQLSRV:user=sa:passwd=P@ssword123:srvname=localhost:replace_title=1'
-"let g:dbext_default_profile='mySQLServer'
 
 syntax on
 syntax enable
 
 "set nowrap
-set nowrap
+"set nowrap
 set ai "Auto indent
 set si "Smart indent
 
@@ -53,7 +50,7 @@ set laststatus=2
 
 "Increase search
 set incsearch
-set hlsearch            " highlight matches
+"set hlsearch            " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
@@ -80,12 +77,12 @@ set wildmode=full
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 
-set foldenable          " enable folding
+"set foldenable          " enable folding
 "set foldlevelstart=10   " open most folds by default
 "set foldnestmax=10      " 10 nested fold max
 " space open/closes folds
 "nnoremap <space> za
-set foldmethod=indent   " fold based on indent level
+"set foldmethod=indent   " fold based on indent level
 
 " Set to auto read when a file is changed from the outside
 set autoread
