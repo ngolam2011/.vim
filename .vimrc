@@ -66,11 +66,11 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 set tabstop=4       " number of visual spaces per TAB
 set expandtab       " tabs are spaces
-
+set shiftwidth=2
 set showcmd             " show command in bottom bar
 
-set cursorline          " highlight current line
-hi CursorLine term=reverse ctermbg=8 guibg=DarkGrey
+"set cursorline          " highlight current line
+"hi CursorLine term=reverse ctermbg=8 guibg=DarkGrey
 
 set wildmenu            " visual autocomplete for command menu
 set wildmode=full
