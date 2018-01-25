@@ -6,8 +6,20 @@ call plug#begin($USERPROFILE.'/vimplugin')
 "Plug in
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
+"Ignore for ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 "let mapleader=","       " leader is comma
 "let g:mapleader = ","
 
@@ -24,6 +36,9 @@ set path+=**
 
 "Gundo
 "nnoremap <F5> :GundoToggle<CR>
+
+"Set forward slash for window file completation.
+set shellslash
 
 
 syntax on
@@ -64,9 +79,10 @@ nnoremap <leader><space> :nohlsearch<CR>
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 
-set tabstop=4       " number of visual spaces per TAB
+set tabstop=2       " number of visual spaces per TAB
 set expandtab       " tabs are spaces
 set shiftwidth=2
+
 set showcmd             " show command in bottom bar
 
 "set cursorline          " highlight current line
