@@ -1,5 +1,5 @@
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
 behave mswin
 
 call plug#begin($USERPROFILE.'/vimplugin')
@@ -12,7 +12,32 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
+Plug 'mbbill/undotree'
 call plug#end()
+
+"Set up for undotree
+if has("persistent_undo")
+  set undodir=~/.undodir/
+  set undofile
+endif
+
+"Set up for NERDtree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+nmap <F6> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+
+"Set up for eslint
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 "Ignore for ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
@@ -20,8 +45,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
-"let mapleader=","       " leader is comma
-"let g:mapleader = ","
+let mapleader=","       " leader is comma
+let g:mapleader = ","
 
 " filetype support
 set nocompatible
