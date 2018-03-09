@@ -14,7 +14,23 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
 Plug 'mbbill/undotree'
+Plug 'tpope/vim-sensible'
+Plug 'itchyny/lightline.vim'
+Plug 'reedes/vim-colors-pencil'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
+
+"Set up for vim colors pencil
+function! s:goyo_enter()
+  colorscheme pencil
+endfunction
+
+function! s:goyo_leave()
+  colorscheme badwolf
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "Set up for undotree
 if has("persistent_undo")
